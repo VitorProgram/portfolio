@@ -3,17 +3,13 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="h-[calc(100dvh-6rem)] flex justify-between items-center gap-8">
-      <h1 className="text-6xl">
+    <div className="h-[calc(100dvh-6rem)] flex justify-between items-center">
+      <h1 className="text-6xl flex-1">
         I'm <span className="font-semibold">Vitor Silva</span>
       </h1>
 
-      <div className="flex flex-col justify-between items-center">
-        <img
-          src="/illustration.svg"
-          alt="Man Illustration"
-          className="flex-1"
-        />
+      <div className="flex w-full max-w-[450px] flex-col justify-between items-center flex-1">
+        <img src="/illustration.svg" alt="Man Illustration" />
         <Link href="/#techs">
           <ChevronDown
             size={40}
@@ -22,7 +18,7 @@ const HeroSection = () => {
         </Link>
       </div>
 
-      <h1 className="text-6xl font-semibold ">
+      <h1 className="text-6xl font-semibold text-end flex-1">
         Front-End
         <br />
         Developer
