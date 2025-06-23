@@ -10,6 +10,10 @@ const Header = () => {
       path: "/#home",
     },
     {
+      text: "Techs",
+      path: "/#techs",
+    },
+    {
       text: "Work",
       path: "/#work",
     },
@@ -39,6 +43,7 @@ const Header = () => {
             key={index}
             href={link.path}
             className="font-semibold transition-colors duration-300 hover:text-primary"
+            data-text={link.text}
           >
             {link.text}
           </Link>
