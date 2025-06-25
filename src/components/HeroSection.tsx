@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="h-[calc(100dvh-6rem)] flex justify-between items-center">
+    <div className="h-[calc(100dvh-6rem-60px)] flex justify-between items-center">
       <h1 className="text-6xl flex-1">
         I'm <span className="font-semibold">Vitor Silva</span>
       </h1>

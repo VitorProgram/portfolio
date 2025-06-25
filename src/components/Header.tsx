@@ -15,7 +15,7 @@ const Header = () => {
     },
     {
       text: "Work",
-      path: "/#work",
+      path: "/#works",
     },
     {
       text: "About",

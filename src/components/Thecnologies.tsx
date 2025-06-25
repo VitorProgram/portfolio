@@ -59,7 +59,7 @@ const TypingTerminal = () => {
 
   return (
     <div
-      className="flex flex-col w-full md:flex-row items-center justify-center gap-8"
+      className="flex flex-col w-full md:flex-row items-center justify-center gap-8 pt-15"
       id="techs"
     >
       <div className="flex-1 flex flex-col gap-8 md:gap-12">
