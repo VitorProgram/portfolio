@@ -5,7 +5,7 @@ import Link from "next/link";
 const AboutMe = () => {
   return (
     <section
-      className="flex flex-col md:flex-row items-center gap-8 justify-between pt-15 md:pt-20 pb-20"
+      className="flex flex-col md:flex-row items-center gap-8 justify-between pt-15 md:pt-20 pb-20 min-h-[80vh]"
       id="about"
     >
       <div className="flex flex-col gap-6 flex-2">

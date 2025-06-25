@@ -53,10 +53,10 @@ const EducationSection = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-16 pt-15 md:pt-20">
+    <div className="flex flex-col gap-16 pt-15 md:pt-20" id="education">
       <div className="flex flex-col gap-8">
         <h3 className="text-3xl font-semibold text-neutral-100">Education</h3>
-        <div className="flex flex-col gap-8 " id="education">
+        <div className="flex flex-col gap-8 ">
           {education.map((item, index) => (
             <EducationCard key={index} education={item} />
           ))}

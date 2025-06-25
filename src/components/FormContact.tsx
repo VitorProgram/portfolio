@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import emailjs from "@emailjs/browser";
 
 type ContactFormData = {
   name: string;
@@ -17,12 +18,30 @@ const FormContact = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormData>();
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log("Form submitted:", data);
-    // Integração futura aqui (EmailJS, FormSubmit, etc.)
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      const response = await emailjs.send(
+        "service_xt4kvtx", // <- substitua pelo seu service ID
+        "template_pv3r0tu", // <- substitua pelo seu template ID
+        {
+          name: data.name,
+          email: data.email,
+          subject: data.subject || "No subject",
+          message: data.message,
+          time: new Date().toLocaleString(),
+        },
+        "smV5kPrAWykhe0kPg" // <- substitua pela sua public key
+      );
+
+      console.log("E-mail enviado com sucesso:", response.text);
+      reset(); // limpa o formulário
+    } catch (error) {
+      console.error("Erro ao enviar o e-mail:", error);
+    }
   };
 
   return (
