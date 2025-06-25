@@ -1,4 +1,5 @@
 import AboutMe from "@/components/AboutMe";
+import ContactSection from "@/components/ContactSection";
 import EducationSection from "@/components/EducationSection";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -14,6 +15,7 @@ const Home = () => {
       <Works />
       <EducationSection />
       <AboutMe />
+      <ContactSection />
     </div>
   );
 };

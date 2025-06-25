@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import path from "path";
 
 const Header = () => {
   const links = [
@@ -24,6 +25,10 @@ const Header = () => {
     {
       text: "About",
       path: "/#about",
+    },
+    {
+      text: "Contact",
+      path: "/#contact",
     },
   ];
 
