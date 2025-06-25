@@ -1,3 +1,4 @@
+import AboutMe from "@/components/AboutMe";
 import EducationSection from "@/components/EducationSection";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -12,6 +13,7 @@ const Home = () => {
       <Technologies />
       <Works />
       <EducationSection />
+      <AboutMe />
     </div>
   );
 };

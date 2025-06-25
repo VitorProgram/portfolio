@@ -2,19 +2,12 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { Github, Globe } from "lucide-react";
 import { ReactNode } from "react";
+import LinkButton from "./LinkButton";
 
 interface WorkCardProps {
   work: Work;
   justify: "flex-row" | "flex-row-reverse";
 }
-
-const WorkButton = ({ children }: { children: ReactNode }) => {
-  return (
-    <Button className="bg-transparent rounded-4xl border-2 border-neutral-200 h-10 cursor-pointer transition-all duration-300 p-0 hover:bg-neutral-100 hover:border-neutral-100 hover:text-gray-900">
-      {children}
-    </Button>
-  );
-};
 
 const WorkCard = ({ work, justify }: WorkCardProps) => {
   return (
@@ -72,19 +65,19 @@ const WorkCard = ({ work, justify }: WorkCardProps) => {
         <div className="flex gap-4">
           {work.deployUrl && (
             <Link href={work.deployUrl} target="_blank">
-              <WorkButton>
+              <LinkButton>
                 View Deploy
                 <Globe className="size-5" />
-              </WorkButton>
+              </LinkButton>
             </Link>
           )}
 
           {work.githubUrl && (
             <Link href={work.githubUrl} target="_blank">
-              <WorkButton>
+              <LinkButton>
                 View on Github
                 <Github className="size-5" />
-              </WorkButton>
+              </LinkButton>
             </Link>
           )}
         </div>
