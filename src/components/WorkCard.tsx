@@ -19,7 +19,7 @@ interface WorkCardProps {
 const WorkCard = ({ work, justify, t }: WorkCardProps) => {
   return (
     <div className={`flex gap-6 ${justify}`}>
-      <div className="relative rounded-2xl max-w-147 w-full overflow-hidden group">
+      <div className="relative rounded-2xl max-w-147 w-full overflow-hidden">
         <img
           className="w-full h-auto object-cover rounded-2xl"
           src={work.imagePath}

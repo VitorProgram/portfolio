@@ -9,7 +9,7 @@ const ContactSection = () => {
       <img
         src="/illustration-3.svg"
         alt="Illustration 3"
-        className="flex-1 rounded-lg"
+        className="flex-1 rounded-lg hidden lg:block"
       />
 
       <FormContact />

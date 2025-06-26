@@ -46,7 +46,7 @@ const FormContact = () => {
   };
 
   return (
-    <div className="flex-[1.5]">
+    <div className="flex-[1.5] md:max-w-160 md:m-auto lg:max-w-full">
       <h2 className="text-3xl md:text-5xl font-bold mb-10 text-center">
         {t("title")}
       </h2>
