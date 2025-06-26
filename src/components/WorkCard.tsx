@@ -7,9 +7,16 @@ import LinkButton from "./LinkButton";
 interface WorkCardProps {
   work: Work;
   justify: "flex-row" | "flex-row-reverse";
+  t: {
+    buttons: {
+      viewDeploy: string;
+      viewGithub: string;
+      viewProject: string;
+    };
+  };
 }
 
-const WorkCard = ({ work, justify }: WorkCardProps) => {
+const WorkCard = ({ work, justify, t }: WorkCardProps) => {
   return (
     <div className={`flex gap-6 ${justify}`}>
       <div className="relative rounded-2xl max-w-147 w-full overflow-hidden group">
@@ -66,7 +73,7 @@ const WorkCard = ({ work, justify }: WorkCardProps) => {
           {work.deployUrl && (
             <Link href={work.deployUrl} target="_blank">
               <LinkButton>
-                View Deploy
+                {t.buttons.viewDeploy}
                 <Globe className="size-5" />
               </LinkButton>
             </Link>
@@ -75,7 +82,7 @@ const WorkCard = ({ work, justify }: WorkCardProps) => {
           {work.githubUrl && (
             <Link href={work.githubUrl} target="_blank">
               <LinkButton>
-                View on Github
+                {t.buttons.viewGithub}
                 <Github className="size-5" />
               </LinkButton>
             </Link>

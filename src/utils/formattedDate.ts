@@ -1,8 +1,22 @@
-export const formattedDate = (date: Date) => {
-  const newDate = new Intl.DateTimeFormat("en-US", {
-    year: "numeric",
-    month: "long",
-  }).format(date);
+import { useLocale } from "next-intl";
+import { capitalizeFirstLetter } from "./capitalizeFirstLetter";
 
-  return newDate;
+export const useFormattedDate = () => {
+  const locale = useLocale();
+
+  const formatDate = (dateString: string | Date) => {
+    const date =
+      typeof dateString === "string" ? new Date(dateString) : dateString;
+
+    let formatted = new Intl.DateTimeFormat(locale, {
+      year: "numeric",
+      month: "long",
+    }).format(date);
+
+    formatted = capitalizeFirstLetter(formatted);
+
+    return formatted;
+  };
+
+  return formatDate;
 };

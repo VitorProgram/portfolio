@@ -1,6 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+import { useTranslations } from "next-intl";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,8 @@ type ContactFormData = {
 };
 
 const FormContact = () => {
+  const t = useTranslations("contact"); // Aqui pega as traduções direto do namespace "contact"
+
   const {
     register,
     handleSubmit,
@@ -24,9 +27,9 @@ const FormContact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      const response = await emailjs.send(
-        "service_xt4kvtx", // <- substitua pelo seu service ID
-        "template_pv3r0tu", // <- substitua pelo seu template ID
+      await emailjs.send(
+        "service_xt4kvtx",
+        "template_pv3r0tu",
         {
           name: data.name,
           email: data.email,
@@ -34,11 +37,9 @@ const FormContact = () => {
           message: data.message,
           time: new Date().toLocaleString(),
         },
-        "smV5kPrAWykhe0kPg" // <- substitua pela sua public key
+        "smV5kPrAWykhe0kPg"
       );
-
-      console.log("E-mail enviado com sucesso:", response.text);
-      reset(); // limpa o formulário
+      reset();
     } catch (error) {
       console.error("Erro ao enviar o e-mail:", error);
     }
@@ -47,7 +48,7 @@ const FormContact = () => {
   return (
     <div className="flex-[1.5]">
       <h2 className="text-3xl md:text-5xl font-bold mb-10 text-center">
-        Get in Touch
+        {t("title")}
       </h2>
 
       <form
@@ -56,12 +57,12 @@ const FormContact = () => {
       >
         {/* Nome */}
         <div className="flex flex-col gap-2">
-          <Label htmlFor="name">Name</Label>
+          <Label htmlFor="name">{t("fields.name")}</Label>
           <Input
             id="name"
-            placeholder="Your name"
+            placeholder={t("placeholders.name")}
             className="bg-neutral-900 h-13 transition border border-neutral-700 p-4 rounded-lg focus:border-gray-400 focus:ring-0 focus-visible:ring-0 text-neutral-100"
-            {...register("name", { required: "Name is required" })}
+            {...register("name", { required: t("errors.nameRequired") })}
           />
           {errors.name && (
             <span className="text-red-500 text-sm">{errors.name.message}</span>
@@ -70,17 +71,17 @@ const FormContact = () => {
 
         {/* E-mail */}
         <div className="flex flex-col gap-2">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t("fields.email")}</Label>
           <Input
             id="email"
             type="email"
-            placeholder="your@email.com"
+            placeholder={t("placeholders.email")}
             className="bg-neutral-900 h-13 transition border border-neutral-700 p-4 rounded-lg focus:border-gray-400 focus:ring-0 focus-visible:ring-0 text-neutral-100"
             {...register("email", {
-              required: "Email is required",
+              required: t("errors.emailRequired"),
               pattern: {
                 value: /^\S+@\S+$/i,
-                message: "Enter a valid email",
+                message: t("errors.emailInvalid"),
               },
             })}
           />
@@ -91,10 +92,10 @@ const FormContact = () => {
 
         {/* Assunto */}
         <div className="flex flex-col gap-2">
-          <Label htmlFor="subject">Subject</Label>
+          <Label htmlFor="subject">{t("fields.subject")}</Label>
           <Input
             id="subject"
-            placeholder="Subject (optional)"
+            placeholder={t("placeholders.subject")}
             className="bg-neutral-900 h-13 transition border border-neutral-700 p-4 rounded-lg focus:border-gray-400 focus:ring-0 focus-visible:ring-0 text-neutral-100"
             {...register("subject")}
           />
@@ -102,13 +103,13 @@ const FormContact = () => {
 
         {/* Mensagem */}
         <div className="flex flex-col gap-2">
-          <Label htmlFor="message">Message</Label>
+          <Label htmlFor="message">{t("fields.message")}</Label>
           <Textarea
             id="message"
             rows={6}
-            placeholder="Write your message here"
+            placeholder={t("placeholders.message")}
             className="bg-neutral-900 transition border border-neutral-700 p-4 rounded-lg resize-none focus:border-gray-400 focus:ring-0 focus-visible:ring-0 text-neutral-100"
-            {...register("message", { required: "Message is required" })}
+            {...register("message", { required: t("errors.messageRequired") })}
           />
           {errors.message && (
             <span className="text-red-500 text-sm">
@@ -123,7 +124,7 @@ const FormContact = () => {
           disabled={isSubmitting}
           className="bg-transparent border-2 h-12 cursor-pointer border-neutral-200 hover:border-gray-900 hover:bg-neutral-100 transition-colors duration-300 text-neutral-100 hover:text-gray-900 py-3 px-6 rounded-lg text-lg font-medium self-end"
         >
-          {isSubmitting ? "Sending..." : "Send Message"}
+          {isSubmitting ? t("button.sending") : t("button.send")}
         </Button>
       </form>
     </div>

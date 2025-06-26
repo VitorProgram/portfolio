@@ -1,15 +1,28 @@
-import { formattedDate } from "@/utils/formattedDate";
+"use client";
+
+import { useFormattedDate } from "@/utils/formattedDate";
+
+interface Education {
+  title: string;
+  institution: string;
+  status?: string;
+  imagePath: string;
+  initDate?: string | Date;
+  endDate?: string | Date;
+}
 
 interface EducationCardProps {
   education: Education;
 }
 
 const EducationCard = ({ education }: EducationCardProps) => {
-  const initDate = education.initDate && formattedDate(education.initDate);
-  const endDate = education.endDate && formattedDate(education.endDate);
+  const formatDate = useFormattedDate();
+
+  const initDate = education.initDate ? formatDate(education.initDate) : null;
+  const endDate = education.endDate ? formatDate(education.endDate) : null;
 
   return (
-    <div className="flex items-center gap-6 border-b-1 border-gray-700 pb-3">
+    <div className="flex items-center gap-6 border-b border-gray-700 pb-3">
       <img
         src={education.imagePath}
         alt={`${education.title} - ${education.institution}`}
@@ -20,13 +33,16 @@ const EducationCard = ({ education }: EducationCardProps) => {
           {education.title} - {education.institution}
         </h4>
         <p className="font-medium text-neutral-200 text-lg">
-          <time
-            dateTime={education.initDate && education.initDate.toISOString()}
-          >
-            {initDate}
-          </time>
-          {education.endDate ? (
-            <time dateTime={education.endDate.toISOString()}> - {endDate}</time>
+          {initDate && (
+            <time dateTime={new Date(education.initDate!).toISOString()}>
+              {initDate}
+            </time>
+          )}
+          {endDate ? (
+            <time dateTime={new Date(education.endDate!).toISOString()}>
+              {" "}
+              - {endDate}
+            </time>
           ) : (
             ` - ${education.status}`
           )}

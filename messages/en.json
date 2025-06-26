@@ -1,0 +1,169 @@
+{
+  "header": {
+    "home": "Home",
+    "techs": "Techs",
+    "work": "Work",
+    "education": "Education",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "heroSection": {
+    "intro": "I'm",
+    "name": "Vitor Silva",
+    "altImage": "Illustration retrô futuristic of Vitor Silva",
+    "titleLine1": "Front-End",
+    "titleLine2": "Developer"
+  },
+  "techs": {
+    "title": "Some of my",
+    "highlight": "Tools and Technologies",
+    "terminalResults": {
+      "node": "v18.14.0",
+      "build": "Build successful ✔️",
+      "react": "React 18.2.0",
+      "ts": "4.9.4",
+      "prisma": "Database configured ✔️",
+      "figma": "UI/UX designs ready 🎨",
+      "git": "Commit pushed to remote repository ✔️"
+    }
+  },
+  "experience": {
+    "title": "My Experience",
+    "projects": [
+      {
+        "imagePath": "/the-right-ride.svg",
+        "title": "The Right Ride",
+        "description": "Freelance project for the executive transportation company The Right Ride, focused on performance, modern design, and an optimized user experience.",
+        "projectType": "Web",
+        "deployUrl": "https://therightride.us",
+        "stacks": [
+          { "name": "Next.js", "imagePath": "technologies/nextjs.svg" },
+          { "name": "Typescript", "imagePath": "technologies/typescript.svg" },
+          { "name": "Tailwind", "imagePath": "technologies/tailwindcss.svg" },
+          { "name": "Shadcn UI", "imagePath": "technologies/shadcn.svg" }
+        ]
+      },
+      {
+        "imagePath": "/stock-flow.svg",
+        "title": "Stock Flow",
+        "description": "Personal project called Stock Flow, focused on inventory management for small and medium businesses, with user authentication and database integration.",
+        "projectType": "Web",
+        "githubUrl": "https://github.com/VitorProgram/stock-flow-frontend",
+        "deployUrl": "https://stock-flow-one.vercel.app/",
+        "stacks": [
+          { "name": "Next.js", "imagePath": "technologies/nextjs.svg" },
+          { "name": "Typescript", "imagePath": "technologies/typescript.svg" },
+          { "name": "Mantine UI", "imagePath": "technologies/mantine.svg" },
+          { "name": "Node.js", "imagePath": "technologies/nodejs.svg" },
+          { "name": "Prisma", "imagePath": "technologies/prisma.svg" }
+        ]
+      },
+      {
+        "imagePath": "/mod-notes.svg",
+        "title": "Mod Notes",
+        "description": "Personal project called Mod Notes, a note-taking app with audio recording support to easily capture ideas.",
+        "projectType": "Web",
+        "githubUrl": "https://github.com/VitorProgram/ModNotes",
+        "deployUrl": "https://mod-notes.vercel.app/",
+        "stacks": [
+          { "name": "React.js", "imagePath": "technologies/react.svg" },
+          { "name": "Javascript", "imagePath": "technologies/javascript.svg" }
+        ]
+      }
+    ],
+    "buttons": {
+      "viewDeploy": "View Deploy",
+      "viewGithub": "View on Github",
+      "viewProject": "View Project"
+    }
+  },
+  "education": {
+    "title": "Education",
+    "achievementsTitle": "Achievements",
+    "list": [
+      {
+        "title": "Systems Analysis and Development",
+        "institution": "Uniamérica Descomplica",
+        "status": "Studying",
+        "initDate": "2025-01-01",
+        "imagePath": "/education/descomplica.svg"
+      },
+      {
+        "title": "Systems Development Technician",
+        "institution": "ETE",
+        "status": "Completed",
+        "initDate": "2023-06-01",
+        "endDate": "2024-12-01",
+        "imagePath": "/education/ete.svg"
+      },
+      {
+        "title": "Front-End Developer",
+        "institution": "Onebit Code",
+        "status": "Completed",
+        "initDate": "2024-01-01",
+        "endDate": "2024-12-01",
+        "imagePath": "/education/onebit.svg"
+      },
+      {
+        "title": "Java + Spring Boot Bootcamp",
+        "institution": "Dio",
+        "status": "Studying",
+        "initDate": "2025-02-01",
+        "imagePath": "/education/dio.svg"
+      }
+    ],
+    "achievements": [
+      {
+        "title": "1st Place and Scientific and Technological Initiation Scholarship",
+        "institution": "UFPE",
+        "initDate": "2024-06-01",
+        "endDate": "2024-12-01",
+        "imagePath": "/education/ufpe.svg"
+      },
+      {
+        "title": "Scientific Initiation Scholarship, Verbalize",
+        "institution": "Facepe",
+        "initDate": "2024-10-01",
+        "endDate": "2025-02-01",
+        "imagePath": "/education/facepe.svg"
+      }
+    ]
+  },
+  "about": {
+    "title": "A Bit of Me",
+    "content": "I'm Vitor, a curious guy who found in front-end development a way to express himself.",
+    "mainContent": "I enjoy learning, exploring design and tech, thinking about how it all connects to everyday life.",
+    "buttons": {
+      "linkedin": "My Linkedin",
+      "github": "My Github"
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "email": "your@email.com",
+      "subject": "Subject (optional)",
+      "message": "Write your message here"
+    },
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Enter a valid email",
+      "messageRequired": "Message is required"
+    },
+    "button": {
+      "sending": "Sending...",
+      "send": "Send Message"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Vitor Silva. All Rights Reserved."
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "header": {
+    "home": "Início",
+    "techs": "Tecnologias",
+    "work": "Projetos",
+    "education": "Educação",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "heroSection": {
+    "intro": "Eu sou",
+    "name": "Vitor Silva",
+    "altImage": "Ilustração retrô futurista de Vitor Silva",
+    "titleLine1": "Desenvolvedor",
+    "titleLine2": "Front-End"
+  },
+  "techs": {
+    "title": "Algumas das minhas",
+    "highlight": "Ferramentas e Tecnologias",
+    "terminalResults": {
+      "node": "v18.14.0",
+      "build": "Build realizado com sucesso ✔️",
+      "react": "React 18.2.0",
+      "ts": "4.9.4",
+      "prisma": "Banco de dados configurado ✔️",
+      "figma": "Designs UI/UX prontos 🎨",
+      "git": "Commit enviado ao repositório remoto ✔️"
+    }
+  },
+  "experience": {
+    "title": "Minha Experiência",
+    "projects": [
+      {
+        "imagePath": "/the-right-ride.svg",
+        "title": "The Right Ride",
+        "description": "Projeto freelancer para a empresa executiva The Right Ride, focado em performance, design moderno e experiência otimizada.",
+        "projectType": "Web",
+        "deployUrl": "https://therightride.us",
+        "stacks": [
+          { "name": "Next.js", "imagePath": "technologies/nextjs.svg" },
+          { "name": "Typescript", "imagePath": "technologies/typescript.svg" },
+          { "name": "Tailwind", "imagePath": "technologies/tailwindcss.svg" },
+          { "name": "Shadcn UI", "imagePath": "technologies/shadcn.svg" }
+        ]
+      },
+      {
+        "imagePath": "/stock-flow.svg",
+        "title": "Stock Flow",
+        "description": "Projeto pessoal chamado Stock Flow, focado em gerenciamento de inventário para pequenas e médias empresas, com autenticação e banco de dados.",
+        "projectType": "Web",
+        "githubUrl": "https://github.com/VitorProgram/stock-flow-frontend",
+        "deployUrl": "https://stock-flow-one.vercel.app/",
+        "stacks": [
+          { "name": "Next.js", "imagePath": "technologies/nextjs.svg" },
+          { "name": "Typescript", "imagePath": "technologies/typescript.svg" },
+          { "name": "Mantine UI", "imagePath": "technologies/mantine.svg" },
+          { "name": "Node.js", "imagePath": "technologies/nodejs.svg" },
+          { "name": "Prisma", "imagePath": "technologies/prisma.svg" }
+        ]
+      },
+      {
+        "imagePath": "/mod-notes.svg",
+        "title": "Mod Notes",
+        "description": "Projeto pessoal chamado Mod Notes, um app de anotações com suporte a gravação de áudio para facilitar a captura de ideias.",
+        "projectType": "Web",
+        "githubUrl": "https://github.com/VitorProgram/ModNotes",
+        "deployUrl": "https://mod-notes.vercel.app/",
+        "stacks": [
+          { "name": "React.js", "imagePath": "technologies/react.svg" },
+          { "name": "Javascript", "imagePath": "technologies/javascript.svg" }
+        ]
+      }
+    ],
+    "buttons": {
+      "viewDeploy": "Ver Deploy",
+      "viewGithub": "Ver no Github",
+      "viewProject": "Ver Projeto"
+    }
+  },
+
+  "about": {
+    "title": "Um Pouco Sobre Mim",
+    "content": "Sou Vitor, um cara curioso que encontrou no desenvolvimento front-end uma forma de se expressar.",
+    "mainContent": "Gosto de aprender, explorar design e tecnologia, pensando em como tudo se conecta com o dia a dia.",
+    "buttons": {
+      "linkedin": "Linkedin",
+      "github": "Github"
+    }
+  },
+  "education": {
+    "title": "Formação",
+    "achievementsTitle": "Conquistas",
+    "list": [
+      {
+        "title": "Análise e Desenvolvimento de Sistemas",
+        "institution": "Uniamérica Descomplica",
+        "status": "Cursando",
+        "initDate": "2025-01-01",
+        "imagePath": "/education/descomplica.svg"
+      },
+      {
+        "title": "Técnico em Desenvolvimento de Sistemas",
+        "institution": "ETE",
+        "status": "Concluído",
+        "initDate": "2023-06-01",
+        "endDate": "2024-12-01",
+        "imagePath": "/education/ete.svg"
+      },
+      {
+        "title": "Desenvolvedor Front-End",
+        "institution": "Onebit Code",
+        "status": "Concluído",
+        "initDate": "2024-01-01",
+        "endDate": "2024-12-01",
+        "imagePath": "/education/onebit.svg"
+      },
+      {
+        "title": "Bootcamp Java + Spring Boot",
+        "institution": "Dio",
+        "status": "Cursando",
+        "initDate": "2025-02-01",
+        "imagePath": "/education/dio.svg"
+      }
+    ],
+    "achievements": [
+      {
+        "title": "1º Lugar e Bolsa de Iniciação Científica e Tecnológica",
+        "institution": "UFPE",
+        "initDate": "2024-06-01",
+        "endDate": "2024-12-01",
+        "imagePath": "/education/ufpe.svg"
+      },
+      {
+        "title": "Bolsa de Iniciação Científica, Verbalize",
+        "institution": "Facepe",
+        "initDate": "2024-10-01",
+        "endDate": "2025-02-01",
+        "imagePath": "/education/facepe.svg"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contate-me",
+    "fields": {
+      "name": "Nome",
+      "email": "E-mail",
+      "subject": "Assunto",
+      "message": "Mensagem"
+    },
+    "placeholders": {
+      "name": "Seu nome",
+      "email": "seu@email.com",
+      "subject": "Assunto (opcional)",
+      "message": "Escreva sua mensagem aqui"
+    },
+    "errors": {
+      "nameRequired": "Nome é obrigatório",
+      "emailRequired": "E-mail é obrigatório",
+      "emailInvalid": "Digite um e-mail válido",
+      "messageRequired": "Mensagem é obrigatória"
+    },
+    "button": {
+      "sending": "Enviando...",
+      "send": "Enviar Mensagem"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Vitor Silva. Todos os direitos reservados."
+  }
+}
