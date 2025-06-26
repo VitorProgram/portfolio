@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import ToggleLang from "./ToggleLang";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SideNav from "./SideNav";
 
 const Header = () => {
@@ -27,10 +27,31 @@ const Header = () => {
     setShowSideNav(true);
   };
 
+  // Ativa SideNav ao rolar para além da heroSection
+  useEffect(() => {
+    const hero = document.getElementById("heroSection");
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Se a seção hero NÃO estiver visível → ativa o side nav
+        setShowSideNav(!entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0.1,
+      }
+    );
+
+    observer.observe(hero);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
-      <header className="w-full h-24 flex justify-between items-center px-8">
-        <div className="flex gap-12 items-center">
+      <header className="flex w-full h-24 justify-between items-center px-8">
+        <div className="flex gap-6 items-center">
           <Button
             variant="ghost"
             className="p-0 cursor-pointer"
@@ -38,24 +59,32 @@ const Header = () => {
           >
             <Image src="/logo.svg" alt="Vitor" width={120} height={75} />
           </Button>
-          <ToggleLang />
+
+          <div className="hidden md:block">
+            <ToggleLang />
+          </div>
         </div>
 
-        <nav className="flex gap-8">
+        <nav className="hidden md:flex gap-8">
           {links.map((link, index) => (
             <Link
               key={index}
               href={link.path}
               onClick={handleLinkClick}
               className="relative font-semibold text-muted-foreground transition-colors duration-300 hover:text-primary
-              after:content-[''] after:absolute after:left-1/2 after:bottom-[-6px] after:h-[2px] after:w-1/2 after:-translate-x-1/2
-              after:bg-neutral-100 after:rounded-full after:scale-x-0 after:origin-center
-              after:transition-transform after:duration-300 hover:after:scale-x-100"
+                after:content-[''] after:absolute after:left-1/2 after:bottom-[-6px] after:h-[2px] after:w-1/2 after:-translate-x-1/2
+                after:bg-neutral-100 after:rounded-full after:scale-x-0 after:origin-center
+                after:transition-transform after:duration-300 hover:after:scale-x-100"
             >
               {link.text}
             </Link>
           ))}
         </nav>
+
+        {/* Aqui vai o menu hamburguer */}
+        <a href="" className="md:hidden">
+          Hamburguer
+        </a>
       </header>
 
       <SideNav isVisible={showSideNav} />
