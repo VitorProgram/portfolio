@@ -22,7 +22,11 @@ const languages = [
   { value: "en", label: "en-us 🇺🇸" },
 ];
 
-const ToggleLang = () => {
+interface ToggleLangProps {
+  disableCloseOnSelect?: boolean;
+}
+
+const ToggleLang = ({ disableCloseOnSelect = false }: ToggleLangProps) => {
   const router = useRouter();
   const pathname = usePathname(); // Pega a rota atual sem query params
   const searchParams = useSearchParams(); // Para manter query params
@@ -44,10 +48,12 @@ const ToggleLang = () => {
 
   const handleSelect = (newLocale: string) => {
     setValue(newLocale);
-    setOpen(false);
+    if (!disableCloseOnSelect) {
+      setOpen(false); // Só fecha se não for usado em menu que deve ficar aberto
+    }
 
-    // Mantém a rota atual, só troca o locale (primeiro segmento da URL)
-    const segments = pathname.split("/").slice(2); // remove ['', 'locale', ...rest]
+    // Atualiza o locale da URL
+    const segments = pathname.split("/").slice(2);
     const search = searchParams.toString();
     const newPath = `/${newLocale}/${segments.join("/")}${
       search ? "?" + search : ""
@@ -70,7 +76,10 @@ const ToggleLang = () => {
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent className="p-0" style={{ width: buttonWidth }}>
+      <PopoverContent
+        className="p-0 bg-zinc-900 text-white border border-zinc-700 rounded-md shadow-lg"
+        style={{ width: buttonWidth }}
+      >
         <Command>
           <CommandList>
             <CommandGroup>

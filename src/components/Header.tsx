@@ -6,6 +6,7 @@ import ToggleLang from "./ToggleLang";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import SideNav from "./SideNav";
+import HamburgerMenu from "./HamburguerMenu";
 
 const Header = () => {
   const t = useTranslations("header");
@@ -50,7 +51,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="flex w-full h-24 justify-between items-center px-8">
+      <header className="flex w-full h-24 justify-between items-center">
         <div className="flex gap-6 items-center">
           <Button
             variant="ghost"
@@ -82,9 +83,9 @@ const Header = () => {
         </nav>
 
         {/* Aqui vai o menu hamburguer */}
-        <a href="" className="md:hidden">
-          Hamburguer
-        </a>
+        <div className="md:hidden cursor-pointer">
+          <HamburgerMenu />
+        </div>
       </header>
 
       <SideNav isVisible={showSideNav} />
