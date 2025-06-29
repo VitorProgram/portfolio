@@ -19,6 +19,7 @@ interface WorkCardProps {
 const WorkCard = ({ work, justify, t }: WorkCardProps) => {
   return (
     <div
+      data-aos="fade-down"
       className={`flex gap-6 flex-col ${
         justify === "flex-row" ? "lg:flex-row" : "lg:flex-row-reverse"
       }`}

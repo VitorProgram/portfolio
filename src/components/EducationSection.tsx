@@ -24,23 +24,47 @@ const EducationSection = () => {
   return (
     <div className="flex flex-col gap-16 pt-15 md:pt-20" id="education">
       <div className="flex flex-col gap-8">
-        <h3 className="text-2xl sm:text-3xl font-semibold text-neutral-100">
+        <h3
+          data-aos="fade"
+          data-aos-once="true"
+          data-aos-delay="300"
+          className="text-2xl sm:text-3xl font-semibold text-neutral-100"
+        >
           {t("title")}
         </h3>
         <div className="flex flex-col gap-8">
           {parsedEducation.map((item, index) => (
-            <EducationCard key={index} education={item} />
+            <div
+              key={index}
+              data-aos="fade-right"
+              data-aos-delay={`${index * 150}`}
+              data-aos-once="true"
+            >
+              <EducationCard education={item} />
+            </div>
           ))}
         </div>
       </div>
 
       <div className="flex flex-col gap-8">
-        <h3 className="text-2xl sm:text-3xl font-semibold text-neutral-100">
+        <h3
+          data-aos="fade"
+          data-aos-delay="300"
+          data-aos-once="true"
+          className="text-2xl sm:text-3xl font-semibold text-neutral-100"
+        >
           {t("achievementsTitle")}
         </h3>
         <div className="flex flex-col gap-8">
           {parsedAchievements.map((item, index) => (
-            <EducationCard key={index} education={item} />
+            <div
+              key={index}
+              data-aos="fade-right"
+              data-aos-delay={`${index * 150}`}
+              data-aos-once="true"
+            >
+              <EducationCard education={item} />
+            </div>
           ))}
         </div>
       </div>

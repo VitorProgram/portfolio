@@ -7,6 +7,7 @@ const HeroSection = async () => {
 
   return (
     <div
+      data-aos="fade-up"
       id="heroSection"
       className="relative h-[calc(100dvh-6rem-60px)] px-4 flex items-center justify-between"
     >

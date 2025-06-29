@@ -51,7 +51,10 @@ const Header = () => {
 
   return (
     <>
-      <header className="flex w-full h-24 justify-between items-center">
+      <header
+        data-aos="fade-down"
+        className="flex w-full h-24 justify-between items-center"
+      >
         <div className="flex gap-6 items-center">
           <Button
             variant="ghost"

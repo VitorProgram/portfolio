@@ -62,7 +62,10 @@ const TypingTerminal = () => {
       className="flex flex-col w-full md:flex-row items-center justify-center gap-8 pt-15"
       id="techs"
     >
-      <div className="flex-1 flex flex-col gap-8 md:gap-12">
+      <div
+        data-aos="fade-right"
+        className="flex-1 flex flex-col gap-8 md:gap-12"
+      >
         <h3 className="text-2xl font-light text-neutral-100">
           {t("title")} <span className="font-semibold">{t("highlight")}</span>
         </h3>
@@ -87,6 +90,7 @@ const TypingTerminal = () => {
 
       {/* Terminal */}
       <div
+        data-aos="fade-left"
         className="bg-black text-green-400 font-mono p-6 rounded-md 
           overflow-y-auto min-h-[440px]
           whitespace-pre-wrap text-sm shadow-lg
