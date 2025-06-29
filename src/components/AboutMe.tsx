@@ -13,12 +13,12 @@ const AboutMe = async () => {
     >
       <div className="flex flex-col gap-6 flex-2">
         <h3 className="font-bold text-[16px] uppercase">{t("title")}</h3>
-        <p className="text-4xl font-light">
+        <p className="text-xl sm:text-3xl md:text-4xl font-light">
           {t("content")}{" "}
           <span className="font-semibold">{t("mainContent")}</span>
         </p>
 
-        <div className="flex gap-6">
+        <div className="flex gap-4 sm:gap-6 flex-wrap">
           <Link href="https://linkedin.com/in/vitorprogram" target="_blank">
             <LinkButton className="hover:bg-[#0A66C2] hover:text-neutral-100 hover:border-[#0A66C2]">
               {t("buttons.linkedin")}

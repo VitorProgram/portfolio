@@ -18,17 +18,21 @@ interface WorkCardProps {
 
 const WorkCard = ({ work, justify, t }: WorkCardProps) => {
   return (
-    <div className={`flex gap-6 ${justify}`}>
-      <div className="relative rounded-2xl max-w-147 w-full overflow-hidden">
+    <div
+      className={`flex gap-6 flex-col ${
+        justify === "flex-row" ? "lg:flex-row" : "lg:flex-row-reverse"
+      }`}
+    >
+      {/* Área da Imagem */}
+      <div className="relative rounded-2xl lg:max-w-147 sm:h-80 lg:h-auto w-full overflow-hidden group">
         <img
-          className="w-full h-auto object-cover rounded-2xl"
+          className="w-full h-full sm:object-cover sm:object-center object-contain rounded-2xl"
           src={work.imagePath}
           alt={work.title}
         />
 
-        {/* Overlay escuro no hover */}
-        <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          {work.deployUrl && (
+        <div className="hidden md:flex absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center justify-center">
+          {work.deployUrl ? (
             <Link
               href={work.deployUrl}
               target="_blank"
@@ -36,9 +40,7 @@ const WorkCard = ({ work, justify, t }: WorkCardProps) => {
             >
               View Project
             </Link>
-          )}
-
-          {!work.deployUrl && work.githubUrl && (
+          ) : work.githubUrl ? (
             <Link
               href={work.githubUrl}
               target="_blank"
@@ -46,18 +48,22 @@ const WorkCard = ({ work, justify, t }: WorkCardProps) => {
             >
               View Project
             </Link>
-          )}
+          ) : null}
         </div>
       </div>
 
-      <div className={`flex flex-col flex-1 justify-end gap-4 md:gap-6 mb-6`}>
+      {/* Área do Conteúdo */}
+      <div className="flex flex-col flex-1 justify-end gap-6">
         <h3 className="font-bold text-[16px] uppercase">{work.title}</h3>
-        <p className="text-4xl font-semibold">{work.description}</p>
 
-        <div className="flex gap-10">
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">
+          {work.description}
+        </p>
+
+        <div className="flex flex-wrap gap-8 md:gap-10">
           <p className="text-lg">{work.projectType} App</p>
 
-          <div className="flex gap-8">
+          <div className="flex gap-8 flex-wrap">
             {work.stacks.map((stack, index) => (
               <img
                 key={index}
@@ -69,7 +75,7 @@ const WorkCard = ({ work, justify, t }: WorkCardProps) => {
           </div>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 md:gap-6 flex-wrap">
           {work.deployUrl && (
             <Link href={work.deployUrl} target="_blank">
               <LinkButton>
@@ -78,7 +84,6 @@ const WorkCard = ({ work, justify, t }: WorkCardProps) => {
               </LinkButton>
             </Link>
           )}
-
           {work.githubUrl && (
             <Link href={work.githubUrl} target="_blank">
               <LinkButton>

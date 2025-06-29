@@ -47,7 +47,7 @@ const FormContact = () => {
 
   return (
     <div className="flex-[1.5] md:max-w-160 md:m-auto lg:max-w-full">
-      <h2 className="text-3xl md:text-5xl font-bold mb-10 text-center">
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-10 text-center">
         {t("title")}
       </h2>
 
@@ -61,7 +61,7 @@ const FormContact = () => {
           <Input
             id="name"
             placeholder={t("placeholders.name")}
-            className="bg-neutral-900 h-13 transition border border-neutral-700 p-4 rounded-lg focus:border-gray-400 focus:ring-0 focus-visible:ring-0 text-neutral-100"
+            className="bg-neutral-900 text-sm sm:text-md h-10 sm:h-13 transition border border-neutral-700 p-4 rounded-lg focus:border-gray-400 focus:ring-0 focus-visible:ring-0 text-neutral-100"
             {...register("name", { required: t("errors.nameRequired") })}
           />
           {errors.name && (
@@ -76,7 +76,7 @@ const FormContact = () => {
             id="email"
             type="email"
             placeholder={t("placeholders.email")}
-            className="bg-neutral-900 h-13 transition border border-neutral-700 p-4 rounded-lg focus:border-gray-400 focus:ring-0 focus-visible:ring-0 text-neutral-100"
+            className="bg-neutral-900 text-sm sm:text-md h-10 sm:h-13 transition border border-neutral-700 p-4 rounded-lg focus:border-gray-400 focus:ring-0 focus-visible:ring-0 text-neutral-100"
             {...register("email", {
               required: t("errors.emailRequired"),
               pattern: {
@@ -96,7 +96,7 @@ const FormContact = () => {
           <Input
             id="subject"
             placeholder={t("placeholders.subject")}
-            className="bg-neutral-900 h-13 transition border border-neutral-700 p-4 rounded-lg focus:border-gray-400 focus:ring-0 focus-visible:ring-0 text-neutral-100"
+            className="bg-neutral-900 text-sm sm:text-md h-10 sm:h-13 transition border border-neutral-700 p-4 rounded-lg focus:border-gray-400 focus:ring-0 focus-visible:ring-0 text-neutral-100"
             {...register("subject")}
           />
         </div>
@@ -108,7 +108,7 @@ const FormContact = () => {
             id="message"
             rows={6}
             placeholder={t("placeholders.message")}
-            className="bg-neutral-900 transition border border-neutral-700 p-4 rounded-lg resize-none focus:border-gray-400 focus:ring-0 focus-visible:ring-0 text-neutral-100"
+            className="bg-neutral-900 transition border border-neutral-700 p-2 sm:p-4 rounded-lg resize-none text-sm sm:text-md focus:border-gray-400 focus:ring-0 focus-visible:ring-0 text-neutral-100"
             {...register("message", { required: t("errors.messageRequired") })}
           />
           {errors.message && (
@@ -122,7 +122,7 @@ const FormContact = () => {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="bg-transparent border-2 h-12 cursor-pointer border-neutral-200 hover:border-gray-900 hover:bg-neutral-100 transition-colors duration-300 text-neutral-100 hover:text-gray-900 py-3 px-6 rounded-lg text-lg font-medium self-end"
+          className="bg-transparent border-2 h-10 sm:h-12 text-md sm:text-lg cursor-pointer border-neutral-200 hover:border-gray-900 hover:bg-neutral-100 transition-colors duration-300 text-neutral-100 hover:text-gray-900 py-3 px-6 rounded-lg font-medium self-end"
         >
           {isSubmitting ? t("button.sending") : t("button.send")}
         </Button>

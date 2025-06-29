@@ -29,10 +29,10 @@ const EducationCard = ({ education }: EducationCardProps) => {
         className="w-12 h-auto rounded-lg"
       />
       <div className="flex flex-col justify-between gap-1">
-        <h4 className="font-semibold text-xl">
+        <h4 className="font-semibold text-lg md:text-xl">
           {education.title} - {education.institution}
         </h4>
-        <p className="font-medium text-neutral-200 text-lg">
+        <p className="font-medium text-neutral-200 text-md md:text-lg">
           {initDate && (
             <time dateTime={new Date(education.initDate!).toISOString()}>
               {initDate}

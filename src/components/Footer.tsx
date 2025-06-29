@@ -9,7 +9,7 @@ const Footer = async () => {
     <footer className="h-20 mt-15 md:mt-20 flex items-center justify-between gap-8">
       <p className="text-neutral-100">{t("copyright")}</p>
 
-      <div className="flex gap-8">
+      <div className="hidden sm:flex gap-8">
         <Link
           href="https://github.com/VitorProgram"
           target="_blank"

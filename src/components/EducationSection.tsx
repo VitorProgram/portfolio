@@ -24,7 +24,7 @@ const EducationSection = () => {
   return (
     <div className="flex flex-col gap-16 pt-15 md:pt-20" id="education">
       <div className="flex flex-col gap-8">
-        <h3 className="text-3xl font-semibold text-neutral-100">
+        <h3 className="text-2xl sm:text-3xl font-semibold text-neutral-100">
           {t("title")}
         </h3>
         <div className="flex flex-col gap-8">
@@ -35,7 +35,7 @@ const EducationSection = () => {
       </div>
 
       <div className="flex flex-col gap-8">
-        <h3 className="text-3xl font-semibold text-neutral-100">
+        <h3 className="text-2xl sm:text-3xl font-semibold text-neutral-100">
           {t("achievementsTitle")}
         </h3>
         <div className="flex flex-col gap-8">

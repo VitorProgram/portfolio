@@ -67,7 +67,7 @@ const TypingTerminal = () => {
           {t("title")} <span className="font-semibold">{t("highlight")}</span>
         </h3>
 
-        <div className="grid grid-cols-4 gap-4 md:gap-6 text-sm text-neutral-300 text-left items-start">
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-4 md:gap-6 text-sm text-neutral-300 text-left items-start">
           {technologies.map((tech) => (
             <div
               key={tech.name}

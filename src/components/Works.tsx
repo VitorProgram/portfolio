@@ -14,8 +14,8 @@ const Works = async () => {
 
   return (
     <div className="pt-15 md:pt-20" id="works">
-      <h3 className="text-3xl font-light text-neutral-100 flex gap-2 mb-12">
-        <FileCode2 size={40} />
+      <h3 className="text-2xl sm:text-3xl font-light text-neutral-100 flex items-center gap-2 mb-12">
+        <FileCode2 size={40} className="size-6 sm:size-10" />
         {t("title")}
       </h3>
 

@@ -48,12 +48,12 @@ const HeroSection = async () => {
       {/* 📱 Layout mobile */}
       <div className="lg:hidden relative z-10 flex flex-col items-center justify-center text-center w-full h-full gap-6">
         <div>
-          <h1 className="text-4xl sm:text-5xl font-normal">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-normal">
             {t("intro")}{" "}
             <span className="font-semibold text-primary">{t("name")}</span>
           </h1>
 
-          <h2 className="text-3xl sm:text-4xl font-semibold mt-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mt-2">
             {t("titleLine1")}
             <br />
             {t("titleLine2")}
