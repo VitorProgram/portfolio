@@ -9,7 +9,7 @@ const HeroSection = async () => {
     <div
       data-aos="fade-up"
       id="heroSection"
-      className="relative h-[calc(100dvh-6rem-60px)] px-4 flex items-center justify-between"
+      className="relative h-[calc(100dvh-6rem-60px)] flex items-center justify-between"
     >
       {/* 📱 Imagem de fundo no mobile */}
       <div className="absolute inset-0 lg:hidden opacity-15 z-0">
@@ -38,8 +38,8 @@ const HeroSection = async () => {
         </Link>
       </div>
 
-      <div className="hidden lg:flex flex-1 justify-end text-6xl font-semibold text-end">
-        <h1>
+      <div className="hidden lg:flex flex-1 justify-end text-6xl font-semibold">
+        <h1 className="text-end">
           {t("titleLine1")}
           <br />
           {t("titleLine2")}
